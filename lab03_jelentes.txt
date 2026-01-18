@@ -1,0 +1,5 @@
+1. feladat: A fork() után a folyamatok párhuzamosan futnak, a gyerek a szülő másolata saját PID-vel.
+2. feladat: wait() hiányában a gyerek zombivá (defunct) válik, amit a ps paranccsal figyeltem meg. wait()-tel a zombi megszűnik.
+3. feladat: Race condition miatt az eredmény elmaradt a 200 ezertől (kb. 148 ezer), mert a counter++ nem atomi.
+4. feladat: Szemaforral az eredmény pontosan 200 000 lett, a szinkronizáció megvédte a kritikus szakaszt.
+Házi: A PING és PONG kiírások szigorúan váltakoznak a két szemaforos vezérlésnek köszönhetően.
